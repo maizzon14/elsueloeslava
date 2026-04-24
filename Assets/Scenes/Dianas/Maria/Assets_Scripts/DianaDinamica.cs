@@ -28,7 +28,7 @@ public class DianaDinamica : MonoBehaviour
 
     void Update()
     {
-        // 👉 TODO en LOCAL (esto arregla el problema del prefab)
+       
         Vector3 targetIzq = abierta
             ? posInicialIzq + Vector3.right * distancia
             : posInicialIzq;
