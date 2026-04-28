@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,6 +19,12 @@ public class DisparoThrow : MonoBehaviour
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float maxForce = 20f;
 
+    [Header("Trajectory Settings")]
+    [SerializeField] private LineRenderer trajectoryLine;
+
+    [Header("BULLSEYE")]
+    [SerializeField] private GameObject hitMarker;
+
     private bool isCharging = false;
     private float chargeTime = 0f;
     private Camera mainCamera;
@@ -29,7 +37,7 @@ public class DisparoThrow : MonoBehaviour
 
     void Update()
     {
-        if (input.actions["Aim"].IsPressed())
+        if (input.actions["Aim"].WasPressedThisFrame())
         {
             StartThrowing();
             print("ESTOY SIENDO CARGADO");  
@@ -50,14 +58,15 @@ public class DisparoThrow : MonoBehaviour
         isCharging = true;
         chargeTime = 0f;
 
-        //Trajectory line
+        trajectoryLine.enabled = true;
     }
 
     void ChargeThrow()
     {
         chargeTime += Time.deltaTime;
 
-        //trajectory line velocity
+        Vector3 grenadeVelocity = (mainCamera.transform.forward + throwDirection).normalized * Mathf.Min(chargeTime * throwForce, maxForce);   
+        ShowTrajectory(throwPosition.position + throwPosition.forward, grenadeVelocity);
     }
 
     void ReleaseThrow()
@@ -65,7 +74,7 @@ public class DisparoThrow : MonoBehaviour
         ThrowGrenade(Mathf.Min(chargeTime * throwForce, maxForce));
         isCharging = false;
 
-        //hide line
+        trajectoryLine.enabled = false;
     }
 
     void ThrowGrenade(float force)
@@ -82,5 +91,53 @@ public class DisparoThrow : MonoBehaviour
 
     }
 
-    //ShowTrajectory
+    void ShowTrajectory(Vector3 origin, Vector3 speed)
+    {
+        Vector3[] trajectoryPoints = new Vector3[100];
+
+        trajectoryPoints[0] = origin;
+
+        int puntosUsados = 1;
+
+        for(int i = 1; i < trajectoryPoints.Length; i++)
+        {
+            float time = i * 0.1f;
+            Vector3 nuevoPunto = origin + speed * time + 0.5f * Physics.gravity * time * time;
+            
+
+            Vector3 puntoAnterior = trajectoryPoints[i - 1];
+
+
+            Vector3 tramo = nuevoPunto - puntoAnterior;
+            float distance = tramo.magnitude;
+
+            bool hasHit = Physics.Raycast(puntoAnterior, tramo.normalized, out RaycastHit hit, distance);
+            
+            if(hasHit)
+            {
+                trajectoryPoints[i] = hit.point;
+                //MoveHitMarker(hit);
+                puntosUsados++;
+                break;
+            }
+            else
+            {
+                trajectoryPoints[i] = nuevoPunto;
+                puntosUsados++;
+            }
+        }
+
+        trajectoryLine.positionCount = puntosUsados;
+
+        trajectoryLine.SetPositions(trajectoryPoints);
+    }
+
+    /*private void MoveHitMarker(RaycastHit hit)
+    {
+        hitMarker.gameObject.setActive(true);
+
+        float offset = 0.025f;
+        hitMarker.position = hit.point + hit.normal * offset;
+        hitMarker.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
+    }*/
 }
