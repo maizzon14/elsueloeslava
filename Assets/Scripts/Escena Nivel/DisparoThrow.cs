@@ -29,6 +29,9 @@ public class DisparoThrow : MonoBehaviour
     private float chargeTime = 0f;
     private Camera mainCamera;
 
+
+    Vector3[] trajectoryPoints = new Vector3[100];
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -48,8 +51,11 @@ public class DisparoThrow : MonoBehaviour
         }
         if (input.actions["Aim"].WasReleasedThisFrame())
         {
-            ReleaseThrow();
             print("SALGO DISPARADO");   
+        }
+        if(input.actions["Shoot"].WasPressedThisFrame() && isCharging)
+        {
+            ReleaseThrow();
         }
     }
 
@@ -63,7 +69,10 @@ public class DisparoThrow : MonoBehaviour
 
     void ChargeThrow()
     {
-        chargeTime += Time.deltaTime;
+        if (input.actions["Aim"].IsPressed())
+        {
+            chargeTime += Time.deltaTime;
+        }
 
         Vector3 grenadeVelocity = (mainCamera.transform.forward + throwDirection).normalized * Mathf.Min(chargeTime * throwForce, maxForce);   
         ShowTrajectory(throwPosition.position + throwPosition.forward, grenadeVelocity);
@@ -93,7 +102,6 @@ public class DisparoThrow : MonoBehaviour
 
     void ShowTrajectory(Vector3 origin, Vector3 speed)
     {
-        Vector3[] trajectoryPoints = new Vector3[100];
 
         trajectoryPoints[0] = origin;
 
