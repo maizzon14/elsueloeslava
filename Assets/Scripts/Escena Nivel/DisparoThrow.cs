@@ -49,10 +49,6 @@ public class DisparoThrow : MonoBehaviour
         {
             ChargeThrow();
         }
-        if (input.actions["Aim"].WasReleasedThisFrame())
-        {
-            print("SALGO DISPARADO");   
-        }
         if(input.actions["Shoot"].WasPressedThisFrame() && isCharging)
         {
             ReleaseThrow();
