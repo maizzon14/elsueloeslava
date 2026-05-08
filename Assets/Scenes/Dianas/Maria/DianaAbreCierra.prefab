@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303976607226983983}
   - component: {fileID: 395571955117850241}
-  - component: {fileID: 5792550484066871892}
+  - component: {fileID: 5081905349919153165}
   m_Layer: 0
   m_Name: Centro
   m_TagString: Untagged
@@ -54,7 +54,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5792550484066871892
+--- !u!114 &5081905349919153165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,9 +63,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5164485894437335286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d327043731bb6e54f8bd02cb77e24f52, type: 3}
+  m_Script: {fileID: 11500000, guid: 88d14f830d552a44ebfea26a51ad9d85, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DianaCentro
+  m_EditorClassIdentifier: Assembly-CSharp::DianaDinamicaCentro
 --- !u!1 &6360063137422177957
 GameObject:
   m_ObjectHideFlags: 0

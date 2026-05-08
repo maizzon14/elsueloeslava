@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class DianaCentro : MonoBehaviour
+public class DianaPopCentro : MonoBehaviour
 {
-    private DianaDinamica diana;
+    private DianaPop diana;
 
     void Start()
     {
-        diana = GetComponentInParent<DianaDinamica>();
+        diana = GetComponentInParent<DianaPop>();
     }
 
-    
     public void RecibirDisparo()
     {
         if (diana != null)
