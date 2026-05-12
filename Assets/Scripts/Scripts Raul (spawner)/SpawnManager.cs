@@ -57,7 +57,7 @@ public class SpawnManager : MonoBehaviour
         }
 
        
-        GameObject newTarget = Instantiate(prefab, pos, Quaternion.identity);
+        GameObject newTarget = Instantiate(prefab, pos, Quaternion.identity, transform);
         targets.Add(newTarget);
         newTarget.transform.LookAt(player);
     }

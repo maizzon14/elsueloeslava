@@ -36,7 +36,7 @@ public class DianaPop : MonoBehaviour
         }
     }
 
-    public void RecibirDisparo()
+    /*public void RecibirDisparo()
     {
         if (destruida) return;
 
@@ -45,5 +45,5 @@ public class DianaPop : MonoBehaviour
         Debug.Log("DIANA ELIMINADA");
 
         Destroy(gameObject);
-    }
+    }*/
 }

@@ -46,13 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   player: {fileID: 0}
   prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6360063137422177957, guid: e468900641dd85f4bb2fba65b6514dc2, type: 3}
+  - {fileID: 1838161153105464335, guid: ca262e8a80a24a44d9ceb5a48ea87c8b, type: 3}
+  - {fileID: 3681022887300416813, guid: 413811d945b00df42b37f3923d27c722, type: 3}
+  - {fileID: 8063966394986673733, guid: b30681527c24de949a5393482887b830, type: 3}
+  - {fileID: 3857544104176357211, guid: 65873854c81402f4e825457e8c0518a8, type: 3}
   maxDianas: 5
-  radio: 20
+  radio: 10
   alturaY: 2
   minDistancia: 1.5

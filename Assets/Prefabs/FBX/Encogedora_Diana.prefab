@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2135837773567435319
+--- !u!1001 &5099793762996294083
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -50,7 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       propertyPath: m_Name
-      value: Moving_Diana
+      value: Encogedora_Diana
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
+      propertyPath: m_TagString
+      value: Diana
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58,40 +66,38 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8626078514564938803}
+      addedObject: {fileID: 1601745059340253331}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7675238114493248463}
+      addedObject: {fileID: 5203103769668139522}
   m_SourcePrefab: {fileID: 100100000, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
---- !u!1 &1253527859731111782 stripped
+--- !u!1 &5334358425543945362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a4628bf864aaa34396478971b1fea99, type: 3}
-  m_PrefabInstance: {fileID: 2135837773567435319}
+  m_PrefabInstance: {fileID: 5099793762996294083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8626078514564938803
+--- !u!114 &1601745059340253331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253527859731111782}
+  m_GameObject: {fileID: 5334358425543945362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5045eea971e3946a9157197d0cfc51, type: 3}
+  m_Script: {fileID: 11500000, guid: 528738b0fd2034d41ade2e03f7cd22bf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeLadoALado
-  moveDistance: 3
-  speed: 4
---- !u!58 &7675238114493248463
-CircleCollider2D:
+  m_EditorClassIdentifier: Assembly-CSharp::Petit
+  minPetit: 0.3
+  maxGrandet: 1
+  speed: 1
+--- !u!135 &5203103769668139522
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253527859731111782}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
+  m_GameObject: {fileID: 5334358425543945362}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -100,21 +106,9 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.03496078, y: 0}
-  m_Radius: 0.99338627
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.75
+  m_Center: {x: 0.03496078, y: 0, z: -0.00000002980233}
