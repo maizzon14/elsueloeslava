@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921b7760621d25140a31a7c10d5d1648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::lava
-  velocidad: 3
+  velocidad: 0.5
   botonTryAgain: {fileID: 837736037}
 --- !u!1 &2114475858
 GameObject:

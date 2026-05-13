@@ -52,6 +52,6 @@ MonoBehaviour:
   - {fileID: 8063966394986673733, guid: b30681527c24de949a5393482887b830, type: 3}
   - {fileID: 3857544104176357211, guid: 65873854c81402f4e825457e8c0518a8, type: 3}
   maxDianas: 5
-  radio: 10
-  alturaY: 2
-  minDistancia: 1.5
+  radio: 15
+  alturaY: 0
+  minDistancia: 500
