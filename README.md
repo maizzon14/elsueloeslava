@@ -43,3 +43,6 @@ INSTRUCCIONES DE JUEGO
 Para jugar, el usuario debe controlar la cámara con el ratón, apuntar manteniendo pulsado el botón derecho y disparar con el izquierdo. El objetivo es acertar las dianas correctas para elevar la plataforma y evitar golpear las dianas moradas, que provocan el descenso de la misma. La lava sube constantemente, así que la rapidez y la precisión son esenciales para sobrevivir.
 
 
+
+ENLACE GAMEPLAY: https://youtu.be/P4AcpmaYyDw
+
