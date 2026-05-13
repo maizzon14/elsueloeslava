@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lava : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class lava : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Player"))
         {
-            botonTryAgain.SetActive(true);
+            SceneManager.LoadScene("LOSE");
         }
     }
 }
